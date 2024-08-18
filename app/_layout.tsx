@@ -1,9 +1,13 @@
-import { Stack } from 'expo-router';
+import { AuthProvider } from '@/components/AuthContext';
+import { Slot } from 'expo-router';
+import { Material3ThemeProvider } from '@/components/ThemeContext';
 
 export default function RootLayout() {
   return (
-    <Stack>
-      <Stack.Screen name="index" />
-    </Stack>
+    <AuthProvider>
+      <Material3ThemeProvider>
+        <Slot />
+      </Material3ThemeProvider>
+    </AuthProvider>
   );
 }
